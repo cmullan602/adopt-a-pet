@@ -1,0 +1,1 @@
+var charactersChoice = prompt
