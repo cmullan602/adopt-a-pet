@@ -2,6 +2,11 @@
 $spacing-horizontal: "h";
 $spacing-vertical: null;
 $spacing-values: ("small": 10px, "medium": 30px, "large": 60px); */
+root: {
+    --borderColor: #C8963E;
+    --textColor: #573D1C;
+    --borderStyle: groove;
+}
 header {
     background-color: #D1462F;
     border: 25px #C8963E ;
@@ -9,8 +14,13 @@ header {
     border-style: groove;
 }
 #title {
-    background-color: #E3C567;
+    background-color: white;
     border-bottom: 10px #573D1C;
     border-style: groove;
     color: #573D1C;
+}
+
+body {
+   background: linear-gradient(to right, #D9AE61,#E3C567, #C8963E);
+
 }
