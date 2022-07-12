@@ -1,0 +1,16 @@
+/* $spacing-shortcuts: ("margin": "mg");
+$spacing-horizontal: "h";
+$spacing-vertical: null;
+$spacing-values: ("small": 10px, "medium": 30px, "large": 60px); */
+header {
+    background-color: #D1462F;
+    border: 25px #C8963E ;
+    color: #573D1C;
+    border-style: groove;
+}
+#title {
+    background-color: #E3C567;
+    border-bottom: 10px #573D1C;
+    border-style: groove;
+    color: #573D1C;
+}
