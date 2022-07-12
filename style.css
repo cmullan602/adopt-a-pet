@@ -1,3 +1,4 @@
+=======
 /* $spacing-shortcuts: ("margin": "mg");
 $spacing-horizontal: "h";
 $spacing-vertical: null;
@@ -20,7 +21,3 @@ header {
     color: #573D1C;
 }
 
-body {
-   background: linear-gradient(to right, #D9AE61,#E3C567, #C8963E);
-
-}
