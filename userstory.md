@@ -1,17 +1,16 @@
-AS a pet enthusiast 
-I WANT TO search for local pets 
-SO THAT I can find a pet to adopt 
+AS a pet/movie enthusiast 
+I WANT TO search for a movie
+SO THAT I can find out if a dog dies in it
 
 WHEN I load the page 
-THEN I search for pet type and location 
+THEN I search for a movie
 
-WHEN I search for type and location
-THEN I can filter pet type by size 
-THEN I can filter by gender 
-THEN I can filter by age [young-adult-senior]
+WHEN I search for a movie
+THEN I can print a picture of skull and crossbones based on if as dog dies or not 
+THEN I can see a summary of the movie
 
-WHEN I find a pet 
-THEN I can save it 
+WHEN I find a movie that a dog does/doesn't die
+THEN I can save it based on those results I chose
 
 
 
