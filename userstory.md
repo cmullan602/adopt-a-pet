@@ -1,16 +1,18 @@
-AS a pet/movie enthusiast 
-I WANT TO search for a movie
-SO THAT I can find out if a dog dies in it
+AS a dog enthusiast
+I WANT TO search for a dog
+SO THAT I can find information about that dog
 
 WHEN I load the page 
-THEN I search for a movie
+THEN I search for a dog
+THEN I am presented with a section with random dog facts
 
-WHEN I search for a movie
-THEN I can print a picture of skull and crossbones based on if as dog dies or not 
-THEN I can see a summary of the movie
+WHEN I search for a dog
+THEN I can view a display of facts about that dog
+THEN I can view a picture of the dog breed
+THEN I can save my previous dog searches to a list
 
-WHEN I find a movie that a dog does/doesn't die
-THEN I can save it based on those results I chose
+WHEN I open my saved searches list
+THEN I am presented with a list of previous searches
 
 
 

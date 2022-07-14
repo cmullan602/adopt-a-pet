@@ -1,2 +1,2 @@
-# adopt-a-pet
-The website will allow the user to search for pets up for adoption in their area, while sharing random pet photos. 
+# dog-fact-finder
+The website will allow the user to search for a dog and save searches.
