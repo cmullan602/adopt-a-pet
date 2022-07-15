@@ -1,22 +1,43 @@
-=======
 /* $spacing-shortcuts: ("margin": "mg");
 $spacing-horizontal: "h";
 $spacing-vertical: null;
 $spacing-values: ("small": 10px, "medium": 30px, "large": 60px); */
-root: {
-    --borderColor: #C8963E;
-    --textColor: #573D1C;
-    --borderStyle: groove;
+
+/*Defining variables*/
+:root {
+    --borderColor: #D3B99F;
+    --textColor: #210203;
+    --bgColor: #9AADBF;
+    --secColor: #6D98BA;
 }
 header {
-    background-color: #D1462F;
-    border: 25px #C8963E ;
-    color: #573D1C;
-    border-style: groove;
+    background-color: var(--bgColor);
+    border: 25px var(--borderColor);
+    color: var(--textColor);
+    border-style: inset;
+    font-family:Arial, Helvetica, sans-serif;
 }
 #title {
-    background-color: white;
-    border-bottom: 10px #573D1C;
-    border-style: groove;
-    color: #573D1C;
+    background-color: var(--bgColor);
+    border-bottom: 10px var(--borderColor);
+    border-style: inset;
+    color: var(--borderColor);
+    font-family:Arial, Helvetica, sans-serif;
+}
 
+.button {
+    background-color: #3C1642; /* Green */
+    border: none;
+    color: white;
+    padding: 15px 32px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 16px;
+    transition-duration: 0.4s;
+  }
+
+  .button:hover {
+    background-color: #C17767; /* Green */
+    color: white;
+  }
