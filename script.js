@@ -1,39 +1,43 @@
-var petAPI = "3hvyI5BUAOX5wj6E3kJD0X5S3hXIbr6PQWYC4PxDDeeNAaMFbg";
+// var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
+// var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
 
-var submitButton = $("#submit");
-
-var selectChoice = $("#select1");
+var submitButton = $("#search");
+var searchInput = $("#search-input");
 
 submitButton.click(async function (e) {
   e.preventDefault();
 
-  const res = await api("someurl");
-
   console.log("yes");
-  console.log(selectChoice.val());
 });
 
-async function api(url) {
-  const response = await fetch(url);
-  const json = await response.json();
-  // api("someurl").then(function(res){console.log(res)};
+//api
+const options = {
+  method: "GET",
+  headers: {
+    "X-RapidAPI-Key": "9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556",
+    "X-RapidAPI-Host": "dogdummyapi.p.rapidapi.com",
+  },
+};
 
-  return json;
-}
-
-api("https://jsonplaceholder.typicode.com/todos/1");
-
-//Get search input from user an well as location (zip code?)
-
-//Submit button
+fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
+  .then((response) => response.json())
+  .then((response) => console.log(response))
+  .catch((err) => console.error(err));
 
 //Render results
+function handleSearchSubmit(e) {
+  if (!searchInput.value) {
+    return;
+  }
 
+  e.preventDefault();
+  var search = searchInput.value.trim();
+  fetchCoords(search);
+  searchInput.value = "";
+}
 //Buttons to navigate results
 
 //Give user option to filter search results
-
-//Link results to Petfinder site
 
 //Fetch images from shiba API
 
