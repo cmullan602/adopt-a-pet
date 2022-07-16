@@ -3,7 +3,8 @@ var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
 
 var submitButton = $("#search");
 var searchInput = $("#search-input");
-
+var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
+var select = $("#dogs");
 submitButton.click(async function (e) {
   e.preventDefault();
 
@@ -21,7 +22,7 @@ var options = {
 
 fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
   .then((response) => response.json())
-  .then((response) => console.log(response))
+  .then((response) => getApiInfo(response))
   .catch((err) => console.error(err));
 
 //function to display a dog image after result
@@ -43,6 +44,19 @@ function handleSearchSubmit(e) {
   fetchCoords(search);
   searchInput.value = "";
 }
+
+
+function getApiInfo(response) {
+  for (var i = 0; i < response.length; i++) {
+    var dogName = response[i].name;
+    var dogOption = $(`<option value="${dogName}">${dogName}</option>`);
+
+    select.append(dogOption);
+  }
+
+  console.log(response);
+}
+
 
 //Fetch images from shiba API
 
