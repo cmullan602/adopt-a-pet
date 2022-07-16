@@ -1,5 +1,5 @@
-// var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
-// var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
+var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
+var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
 
 var submitButton = $("#search");
 var searchInput = $("#search-input");
@@ -11,11 +11,11 @@ submitButton.click(async function (e) {
   console.log("yes");
 });
 
-//api
-const options = {
+// api
+var options = {
   method: "GET",
   headers: {
-    "X-RapidAPI-Key": "9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556",
+    "X-RapidAPI-Key": dogdummyApiKey,
     "X-RapidAPI-Host": "dogdummyapi.p.rapidapi.com",
   },
 };
@@ -24,6 +24,15 @@ fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
   .then((response) => response.json())
   .then((response) => getApiInfo(response))
   .catch((err) => console.error(err));
+
+//function to display a dog image after clicking option from drop down bar
+
+function renderImage(image) {
+  var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
+  var dogIcon = document.createElement(`p`);
+
+  dogIcon.setAttribute("src", iconUrl);
+}
 
 //Render results
 function handleSearchSubmit(e) {

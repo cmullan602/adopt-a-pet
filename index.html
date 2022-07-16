@@ -6,32 +6,39 @@
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
     <title>Dog Facts</title>
 
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css">
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bulma@0.9.4/css/bulma.min.css"
+    />
     <link rel="stylesheet" href="style.css" />
   </head>
   <body>
-    <header style="text-align: center; font-size:xx-large;" ><strong>DO YOU LOVE DOGS AS MUCH AS US?</strong>
+    <header style="text-align: center; font-size: xx-large">
+      <strong>DO YOU LOVE DOGS AS MUCH AS US?</strong>
     </header>
-    <div id="picture" style="text-align: center;">Pictures</div>
-    <div id="facts" style="text-align: center; ">These are the facts </div>
-
-    <div class="sidebar bar-block"style=" background-color:lightblue; width:25%">
-
-      <label for="cars">Choose a dog:</label>
-
-<select name="Dogs" id="dogs">
-  <option value=""></option>
-</select>
-      <button class="submit" style="display: block;">Submit</button>
-    </div>
-    <div<button class="History" style="display: block;;">Search History</button> 
-      <img src="api images go here " alt="">
-      
-
-    </div>
     
 
+    <div
+      class="sidebar bar-block"
+      style="background-color: lightblue; width: 25%"
+    >
+      <!-- <label for="cars">Choose a dog:</label> -->
+
+      <select class="select" name="Dogs" id="dogs">
+        <option value="" disabled selected>Choose a Dog!</option>
+        <!-- append dog options here -->
+        <!-- <option value=""></option> -->
+      </select>
+      <button class="submit" style="display: block">Submit</button>
+    </div>
+    <div>
+      <button class="History" style="display: block;" onclick="location.href='./searchSave.html'">Search History</button>
+      <img src="api images go here " alt="" />
+    </div>
+    <div id="picture" style="text-align: center">Pictures</div>
+    <div id="facts" style="text-align: center">These are the facts</div>
+    
   </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./script.js"></script>
-  </html>
+</html>
