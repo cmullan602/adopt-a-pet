@@ -4,17 +4,23 @@
     --textColor: #210203;
     --bgColor: #9AADBF;
     --secColor: #6D98BA;
+    --thrColor: #C17767;		
+    --frColor: #210203;
 }
 
 body {
+    background-image: url("https://www.nicepng.com/png/full/10-103613_cat-paw-prints-paw-prints-transparent-background.png");
     background-color: var(--bgColor);
+    background-repeat:repeat-x repeat-y;
+    background-size:contain;
+
 }
 
 header {
     background-color: var(--secColor);
     border: solid 10px var(--borderColor);
     color: var(--textColor);
-    
+    border-radius: 10px;
     font-family:Arial, Helvetica, sans-serif;
     padding: 25px 25px;
 }
@@ -22,12 +28,15 @@ header {
 .what-doggy {
     margin-bottom: 10px;
     padding-left: 10px;
+    border-radius: 10px;
 }
 #facts {
     color:var(--textColor);
     font-family: Arial, Helvetica, sans-serif;
     padding: 15px 15px;
     font-size: large;
+    background-color: var(--borderColor);
+    border-radius: 10px;
 }
 
 #picture {
@@ -35,6 +44,8 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     padding: 15px 15px;
     font-size: large;
+    background-color: var(--borderColor);
+    border-radius: 10px;
 }
 
 /*Styling for search div*/
@@ -43,12 +54,15 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     font-size: medium;
     padding: 10px;
+    border:none;
+    border-radius: 10px;
 }
 
 /*Styling for buttons*/
 .submit {
     background-color: #3C1642;
     border: none;
+    border-radius: 10px;
     color: white;
     padding: 10px 35.5px;
     text-align: center;
@@ -57,16 +71,22 @@ header {
     font-size: 15px;
     transition-duration: 0.4s;
     margin-bottom: 10px;
+    box-shadow: 0 5px #999;
   }
 
   .submit:hover {
     background-color: #C17767; 
-    color: white;
+  }
+  .submit:active {
+    background-color: #C17767;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
 
   .History {
     background-color: #3C1642;
     border: none;
+    border-radius: 10px;
     color: white;
     padding: 10px 10px;
     text-align: center;
@@ -74,9 +94,16 @@ header {
     display: inline-block;
     font-size: 15px;
     transition-duration: 0.4s;
+    box-shadow: 0 5px #999;
   }
 
   .History:hover {
     background-color: #C17767; 
     color: white;
+  }
+
+  .History:active {
+    background-color: #C17767;
+    box-shadow: 0 5px #666;
+    transform: translateY(4px);
   }
