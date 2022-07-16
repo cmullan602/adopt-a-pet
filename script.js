@@ -25,8 +25,7 @@ fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
   .then((response) => getApiInfo(response))
   .catch((err) => console.error(err));
 
-//function to display a dog image after clicking option from drop down bar
-
+//function to display a dog image after result
 function renderImage(image) {
   var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
   var dogIcon = document.createElement(`p`);
@@ -46,6 +45,7 @@ function handleSearchSubmit(e) {
   searchInput.value = "";
 }
 
+
 function getApiInfo(response) {
   for (var i = 0; i < response.length; i++) {
     var dogName = response[i].name;
@@ -57,7 +57,6 @@ function getApiInfo(response) {
   console.log(response);
 }
 
-//Give user option to filter search results
 
 //Fetch images from shiba API
 
