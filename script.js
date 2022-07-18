@@ -6,6 +6,10 @@ var submitButton = $("#submit-btn");
 var select = $("#dogs");
 var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
 
+
+const historyEl = $("#historyDisplay")
+let searchHistory = JSON.parse(localStorage.getItem("search"))
+
 var resultsEl = $("#picture");
 
 // api
@@ -40,12 +44,12 @@ function handleSearchSubmit(e) {
 }
 
 //function to display a dog image after result
-// function renderImage(image) {
-//   var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
-//   var dogIcon = document.createElement(`p`);
+function renderImage(image) {
+  var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
+  var dogIcon = document.createElement(`p`);
 
-//   dogIcon.setAttribute("src", iconUrl);
-// }
+  dogIcon.setAttribute("src", iconUrl);
+}
 
 function getApiInfo(response) {
   for (var i = 0; i < response.length; i++) {
@@ -58,11 +62,28 @@ function getApiInfo(response) {
   console.log(response);
 }
 
+//add search to history
+submitButton.addEventListener("click", function () {
+    const searchTerm = select.value;
+    searchHistory.push(searchTerm);
+    localStorage.setItem("search", JSON.stringify(searchHistory));
+    renderSearchHistory();
+})
+
+function renderSearchHistory() { 
+    historyEl.innerHTML = "";
+    for (let i = 0; < searchHistory.length; i++) {
+        const historyItem = document.createElement("input");
+        historyItem.setAttribute("type", "text");
+        historyItem.setAttribute("class", "")
+        historyItem.addEventListener("click", function () {
+            // what does clicking a history item do?)
+        })
+        historyEl.append(historyItem);
+     }
+
+}
+
+
 // searchForm.addEventListener("submit", handleSearchSubmit);
-//Fetch images from shiba API
 
-//Display shiba/bird images
-
-//Save searches/favorites
-
-//Display favorites
