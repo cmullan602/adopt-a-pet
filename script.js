@@ -1,15 +1,12 @@
 var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
 var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
 
-var submitButton = $("#search");
-var searchInput = $("#search-input");
-var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
+var searchForm = $("search-form");
+var submitButton = $("#submit-btn");
 var select = $("#dogs");
-submitButton.click(async function (e) {
-  e.preventDefault();
+var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
 
-  console.log("yes");
-});
+var resultsEl = $("#picture");
 
 // api
 var options = {
@@ -25,26 +22,30 @@ fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
   .then((response) => getApiInfo(response))
   .catch((err) => console.error(err));
 
-//function to display a dog image after result
-function renderImage(image) {
-  var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
-  var dogIcon = document.createElement(`p`);
-
-  dogIcon.setAttribute("src", iconUrl);
-}
+//submit click event
+submitButton.click(async function (e) {
+  e.preventDefault();
+});
 
 //Render results
 function handleSearchSubmit(e) {
-  if (!searchInput.value) {
+  if (!select.value) {
     return;
   }
 
   e.preventDefault();
-  var search = searchInput.value.trim();
+  var search = select.value.trim();
   fetchCoords(search);
-  searchInput.value = "";
+  select.value = "";
 }
 
+//function to display a dog image after result
+// function renderImage(image) {
+//   var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
+//   var dogIcon = document.createElement(`p`);
+
+//   dogIcon.setAttribute("src", iconUrl);
+// }
 
 function getApiInfo(response) {
   for (var i = 0; i < response.length; i++) {
@@ -57,7 +58,7 @@ function getApiInfo(response) {
   console.log(response);
 }
 
-
+// searchForm.addEventListener("submit", handleSearchSubmit);
 //Fetch images from shiba API
 
 //Display shiba/bird images
