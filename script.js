@@ -1,16 +1,15 @@
 var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
 var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
-
-var searchForm = $("search-form");
-
 var submitButton = $("#submit-btn");
 var select = $("#dogs");
 var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
 
-const historyEl = $("#historyDisplay");
+var searchHistoryEL = $("#historyDisplay");
 let searchHistory = JSON.parse(localStorage.getItem("search"));
 
 var selectBreed = "";
+
+var searchHistoryArr = [];
 
 
 
@@ -41,32 +40,21 @@ function getApiInfo(response) {
   console.log(image, description);
 
   $("#picture").html(`<img src="${image}"/>`);
-  $("#facts").html(`<p> ${description}</p>`);
+    $("#facts").html(`<p> ${description}</p>`);
+    
+    
 }
 
-//add search to history
-// submitButton.addEventListener("click", function () {
+function setHistory(response) {
+    if (searchHistoryArr.indexOf(response) !== -1) {
+      return;
+    }
+    searchHistoryArr.push(response);
+    localStorage.setItem('search-history', JSON.stringify(searchHistoryArr));
+    // renderSearches();
+  }
 
-//   const searchTerm = select.value;
-//   searchHistory.push(searchTerm);
-//   localStorage.setItem("search", JSON.stringify(searchHistory));
-//   renderSearchHistory();
-// });
 
-// function renderSearchHistory() {
-//     historyEl.innerHTML = "";
-//     for (let i = 0; < searchHistory.length; i++) {
-
-//         const historyItem = document.createElement("input");
-//         historyItem.setAttribute("type", "text");
-//         historyItem.setAttribute("class", "")
-//         historyItem.addEventListener("click", function () {
-//             // what does clicking a history item do?)
-//         })
-//         historyEl.append(historyItem);
-//      }
-
-// }
 
 
 // searchForm.addEventListener("submit", handleSearchSubmit);
@@ -99,14 +87,33 @@ fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
 //submit click event
 submitButton.click(async function (e) {
   e.preventDefault();
-
+  setHistory(selectBreed);
   fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
     .then((response) => response.json())
     .then((response) => getApiInfo(response))
-    .catch((err) => console.error(err));
+      .catch((err) => console.error(err));
+    
+     
+    
+    
 });
+
+function renderSearches() {
+    for(let i = 0 ; i<searchHistoryArr.length)
+    // $(searchHistoryEL).empty();
+    // $(searchHistoryArr).each(function (i, selectBreed) {
+    //   $(searchHistoryEL).append(`
+    //       <button class="button btn-history is-fullwidth mt-2" data-search="${selectBreed}">${selectBreed}</button>
+    //       `)
+
+        
+    // });
+  
+  }
+
 
 select.change(function () {
   selectBreed = select.val();
 });
 
+renderSearches(); 
