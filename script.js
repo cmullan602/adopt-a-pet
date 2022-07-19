@@ -15,7 +15,7 @@ let searchHistory = JSON.parse(localStorage.getItem("search"))
 var selectBreed = "";
 
 
-var dogUrl = 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
+var dogUrl = 'https://dog.ceo/api/breeds/image/random/3'
 
 
 
@@ -42,32 +42,32 @@ function getApiInfo(response) {
 
   console.log(image, description);
 
-  $("#picture").append(`<img src="${image}"/>`);
-  $("#facts").append(`<p> ${description}</p>`);
+  $("#picture").html(`<img src="${image}"/>`);
+  $("#facts").html(`<p> ${description}</p>`);
 }
 
 
 //add search to history
-submitButton.addEventListener("click", function () {
-    const searchTerm = select.value;
-    searchHistory.push(searchTerm);
-    localStorage.setItem("search", JSON.stringify(searchHistory));
-    renderSearchHistory();
-})
+// submitButton.addEventListener("click", function () {
+//     const searchTerm = select.value;
+//     searchHistory.push(searchTerm);
+//     localStorage.setItem("search", JSON.stringify(searchHistory));
+//     renderSearchHistory();
+// })
 
-function renderSearchHistory() { 
-    historyEl.innerHTML = "";
-    for (let i = 0; < searchHistory.length; i++) {
-        const historyItem = document.createElement("input");
-        historyItem.setAttribute("type", "text");
-        historyItem.setAttribute("class", "")
-        historyItem.addEventListener("click", function () {
-            // what does clicking a history item do?)
-        })
-        historyEl.append(historyItem);
-     }
+// function renderSearchHistory() { 
+//     historyEl.innerHTML = "";
+//     for (let i = 0; i< searchHistory.length; i++) {
+//         const historyItem = document.createElement("input");
+//         historyItem.setAttribute("type", "text");
+//         historyItem.setAttribute("class", "")
+//         historyItem.addEventListener("click", function () {
+//             // what does clicking a history item do?)
+//         })
+//         historyEl.append(historyItem);
+//      }
 
-}
+// }
 
 
 // searchForm.addEventListener("submit", handleSearchSubmit);
