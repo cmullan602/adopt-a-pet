@@ -34,9 +34,9 @@ function getApiInfo(response) {
   const [result] = response.filter((breed) => breed.name === selectBreed);
   const { image, description } = result;
 
-  console.log(image, description);
-
-  $("#picture").html(`<img src="${image}"/>`);
+  $("#picture").html(`
+  <h2>${selectBreed}<h2>
+  <img src="${image}"/>`);
 
   $("#facts").html(
 
