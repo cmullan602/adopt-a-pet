@@ -132,3 +132,31 @@ img {
     box-shadow: 0 5px #666;
     transform: translateY(2px);
   }
+
+  .clear {
+    font-family:'Courier New', Courier, monospace;
+    background-color: #3C1642;
+    border: none;
+    border-radius: 10px;
+    color: white;
+    padding: 10px 10px;
+    text-align: center;
+    text-decoration: none;
+    display: inline-block;
+    font-size: 15px;
+    transition-duration: 0.4s;
+    margin-bottom: 10px;
+    box-shadow: 0 5px #999;
+    margin: 10px;
+  }
+
+  .clear:hover {
+    background-color: #C17767; 
+    color: white;
+  }
+
+  .clear:active {
+    background-color: #C17767;
+    box-shadow: 0 5px #666;
+    transform: translateY(2px);
+  }
