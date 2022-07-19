@@ -1,4 +1,4 @@
-var dogUrl = 'https://dog.ceo/api/breeds/image/random/3'
+var dogUrl = 'https://dog.ceo/api/breeds/image/random/5'
 
 fetch(dogUrl, {
     method: 'GET',
@@ -12,6 +12,8 @@ fetch(dogUrl, {
       $('.saved-container').append(
         `<img id="column" src='${data.message[0]}'>
         <img id="column" src='${data.message[1]}'>
-        <img id="column" src='${data.message[2]}'>`
+        <img id="column" src='${data.message[2]}'>
+        <img id="column" src='${data.message[3]}'>
+        <img id="column" src='${data.message[4]}'>`
       )
     });
