@@ -25,6 +25,13 @@ header {
     padding: 25px 25px;
 }
 
+img {
+  width: 500px;
+  height: 500px;
+  padding: 10px;
+  opacity: 85%;
+}
+
 .what-doggy {
     margin-bottom: 10px;
     padding-left: 10px;
