@@ -29,10 +29,12 @@ header {
     margin-bottom: 10px;
     padding-left: 10px;
     border-radius: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--textColor);
 }
 #facts {
-    color:var(--textColor);
     font-family: Arial, Helvetica, sans-serif;
+    color:var(--textColor);
     padding: 15px 15px;
     font-size: large;
     background-color: var(--borderColor);
@@ -44,11 +46,17 @@ header {
     font-family: Arial, Helvetica, sans-serif;
     padding: 15px 15px;
     font-size: large;
-    background-color: var(--borderColor);
+    background-color: var(--thrColor);
+    border: solid var(--borderColor) 10px;
     border-radius: 10px;
 }
 
-/*Styling for search div*/
+.sidebar {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/*Styling for search bar*/
 #searchBar {
     color:var(--textColor);
     font-family: Arial, Helvetica, sans-serif;
