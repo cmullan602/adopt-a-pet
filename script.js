@@ -1,13 +1,19 @@
 var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
 var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
 
-
 var searchForm = $("search-form");
+
 var submitButton = $("#submit-btn");
 var select = $("#dogs");
 var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
 
-var resultsEl = $("#picture");
+
+
+const historyEl = $("#historyDisplay")
+let searchHistory = JSON.parse(localStorage.getItem("search"))
+
+var selectBreed = "";
+
 
 var dogUrl = 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
 
@@ -22,36 +28,6 @@ var options = {
   },
 };
 
-fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
-  .then((response) => response.json())
-  .then((response) => getApiInfo(response))
-  .catch((err) => console.error(err));
-
-//submit click event
-submitButton.click(async function (e) {
-  e.preventDefault();
-});
-
-//Render results
-function handleSearchSubmit(e) {
-  if (!select.value) {
-    return;
-  }
-
-  e.preventDefault();
-  var search = select.value.trim();
-  fetchCoords(search);
-  select.value = "";
-}
-
-//function to display a dog image after result
-// function renderImage(image) {
-//   var iconUrl = `https://dogdummyapi.herokuapp.com/image/${image}.jpg`;
-//   var dogIcon = document.createElement(`p`);
-
-//   dogIcon.setAttribute("src", iconUrl);
-// }
-
 function getApiInfo(response) {
   for (var i = 0; i < response.length; i++) {
     var dogName = response[i].name;
@@ -59,11 +35,43 @@ function getApiInfo(response) {
 
     select.append(dogOption);
   }
+  if (selectBreed === "") return;
 
-  console.log(response);
+  const [result] = response.filter((breed) => breed.name === selectBreed);
+  const { image, description } = result;
+
+  console.log(image, description);
+
+  $("#picture").append(`<img src="${image}"/>`);
+  $("#facts").append(`<p> ${description}</p>`);
 }
 
+
+//add search to history
+submitButton.addEventListener("click", function () {
+    const searchTerm = select.value;
+    searchHistory.push(searchTerm);
+    localStorage.setItem("search", JSON.stringify(searchHistory));
+    renderSearchHistory();
+})
+
+function renderSearchHistory() { 
+    historyEl.innerHTML = "";
+    for (let i = 0; < searchHistory.length; i++) {
+        const historyItem = document.createElement("input");
+        historyItem.setAttribute("type", "text");
+        historyItem.setAttribute("class", "")
+        historyItem.addEventListener("click", function () {
+            // what does clicking a history item do?)
+        })
+        historyEl.append(historyItem);
+     }
+
+}
+
+
 // searchForm.addEventListener("submit", handleSearchSubmit);
+
 //Fetch images from shiba API
 fetch(dogUrl, {
   method: 'GET',
@@ -82,9 +90,26 @@ fetch(dogUrl, {
   });
 
 
-//Display shiba/bird images
 
 
-//Save searches/favorites
 
-//Display favorites
+fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
+  .then((response) => response.json())
+  .then((response) => getApiInfo(response))
+  .catch((err) => console.error(err));
+
+//submit click event
+submitButton.click(async function (e) {
+  e.preventDefault();
+
+  fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
+    .then((response) => response.json())
+    .then((response) => getApiInfo(response))
+    .catch((err) => console.error(err));
+});
+
+select.change(function () {
+  selectBreed = select.val();
+});
+
+
