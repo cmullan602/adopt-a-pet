@@ -40,11 +40,6 @@ function getApiInfo(response) {
   console.log(image, description);
 
   $("#picture").html(`<img src="${image}"/>`);
-
-    $("#facts").html(`<p> ${description}</p>`);
-    
-    
-=======
   $("#facts").html(
     `<h2> Dog Facts<h2> 
     <p> ${description}</p>`);
@@ -104,18 +99,18 @@ submitButton.click(async function (e) {
     
 });
 
-function renderSearches() {
-    for(let i = 0 ; i<searchHistoryArr.length)
-    // $(searchHistoryEL).empty();
-    // $(searchHistoryArr).each(function (i, selectBreed) {
-    //   $(searchHistoryEL).append(`
-    //       <button class="button btn-history is-fullwidth mt-2" data-search="${selectBreed}">${selectBreed}</button>
-    //       `)
+// function renderSearches() {
+//     for(let i = 0 ; i<searchHistoryArr.length)
+//     // $(searchHistoryEL).empty();
+//     // $(searchHistoryArr).each(function (i, selectBreed) {
+//     //   $(searchHistoryEL).append(`
+//     //       <button class="button btn-history is-fullwidth mt-2" data-search="${selectBreed}">${selectBreed}</button>
+//     //       `)
 
         
-    // });
+//     // });
   
-  }
+//   }
 
 
 select.change(function () {
