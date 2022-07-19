@@ -8,8 +8,7 @@ This website will allow you to search random dog facts, and will also allow you 
 
 Installation is as simple as can be, all you need is a browser! just enter this link into your URL search bar in your browser to start searching for dog types:
 
-<!-- insert deployed page URL here once it is available -->
-
+https://cmullan602.github.io/dog-fact-finder/
 ## Usage
 
 This website can be used to up your knowledge of dogs, as well as provide pictures of the dog you have searched.
@@ -24,3 +23,15 @@ Giwoong N.
 Matt B.
 Connor M.
 Daniel B.
+
+## Features/Technologies
+
+This website uses:
+
+Bulma (for styling) https://bulma.io/
+
+An open source API through RapidAPI for dog breeds https://rapidapi.com/VinceJepoyMendoza/api/dogdummyapi/
+
+An open source API for random dog pictures https://dog.ceo/dog-api/
+
+HTML, CSS, JavaScript

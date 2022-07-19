@@ -25,14 +25,26 @@ header {
     padding: 25px 25px;
 }
 
+img {
+  width: 300px;
+  height: 300px;
+  margin:10px auto 10px auto;
+  padding: 5 px;
+  opacity: 85%;
+  object-fit: cover;
+  border: var(--borderColor) solid 4px;
+}
+
 .what-doggy {
     margin-bottom: 10px;
     padding-left: 10px;
     border-radius: 10px;
+    font-family:Arial, Helvetica, sans-serif;
+    color:var(--textColor);
 }
 #facts {
-    color:var(--textColor);
     font-family: Arial, Helvetica, sans-serif;
+    color:var(--textColor);
     padding: 15px 15px;
     font-size: large;
     background-color: var(--borderColor);
@@ -40,15 +52,18 @@ header {
 }
 
 #picture {
-    color:var(--textColor);
-    font-family: Arial, Helvetica, sans-serif;
-    padding: 15px 15px;
-    font-size: large;
-    background-color: var(--borderColor);
+    padding: 10px 10px;
+    background-color: var(--thrColor);
+    border: solid var(--borderColor) 10px;
     border-radius: 10px;
 }
 
-/*Styling for search div*/
+.sidebar {
+    padding: 15px;
+    border-radius: 10px;
+}
+
+/*Styling for search bar*/
 #searchBar {
     color:var(--textColor);
     font-family: Arial, Helvetica, sans-serif;
@@ -79,8 +94,8 @@ header {
   }
   .submit:active {
     background-color: #C17767;
-    box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    box-shadow: 0 3px #666;
+    transform: translateY(2px);
   }
 
   .History {
@@ -94,7 +109,9 @@ header {
     display: inline-block;
     font-size: 15px;
     transition-duration: 0.4s;
+    margin-bottom: 10px;
     box-shadow: 0 5px #999;
+    margin: 10px;
   }
 
   .History:hover {
@@ -105,5 +122,5 @@ header {
   .History:active {
     background-color: #C17767;
     box-shadow: 0 5px #666;
-    transform: translateY(4px);
+    transform: translateY(2px);
   }
