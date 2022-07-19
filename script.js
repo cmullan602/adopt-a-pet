@@ -12,7 +12,9 @@ let searchHistory = JSON.parse(localStorage.getItem("search"));
 
 var selectBreed = "";
 
-var dogUrl = 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
+
+
+var dogUrl = 'https://dog.ceo/api/breeds/image/random/3'
 
 
 // api
@@ -38,12 +40,13 @@ function getApiInfo(response) {
 
   console.log(image, description);
 
-  $("#picture").append(`<img src="${image}"/>`);
-  $("#facts").append(`<p> ${description}</p>`);
+  $("#picture").html(`<img src="${image}"/>`);
+  $("#facts").html(`<p> ${description}</p>`);
 }
 
 //add search to history
 // submitButton.addEventListener("click", function () {
+
 //   const searchTerm = select.value;
 //   searchHistory.push(searchTerm);
 //   localStorage.setItem("search", JSON.stringify(searchHistory));
@@ -53,6 +56,7 @@ function getApiInfo(response) {
 // function renderSearchHistory() {
 //     historyEl.innerHTML = "";
 //     for (let i = 0; < searchHistory.length; i++) {
+
 //         const historyItem = document.createElement("input");
 //         historyItem.setAttribute("type", "text");
 //         historyItem.setAttribute("class", "")
@@ -63,6 +67,7 @@ function getApiInfo(response) {
 //      }
 
 // }
+
 
 // searchForm.addEventListener("submit", handleSearchSubmit);
 
