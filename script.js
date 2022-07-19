@@ -42,7 +42,7 @@ function getApiInfo(response) {
 
   $("#picture").html(`<img src="${image}"/>`);
   $("#facts").html(
-    `<h2> Dog Facts<h2> 
+    `<h2>Dog Facts<h2> 
     <p> ${description}</p>`);
 }
 
