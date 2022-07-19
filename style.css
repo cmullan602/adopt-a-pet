@@ -8,7 +8,7 @@
     --frColor: #210203;
 }
 
-body {
+html {
     background-image: url("https://www.nicepng.com/png/full/10-103613_cat-paw-prints-paw-prints-transparent-background.png");
     background-color: var(--bgColor);
     background-repeat:repeat-x repeat-y;
@@ -18,10 +18,11 @@ body {
 
 header {
     background-color: var(--secColor);
+    background-size:auto;
     border: solid 10px var(--borderColor);
     color: var(--textColor);
     border-radius: 10px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     padding: 25px 25px;
 }
 
@@ -39,11 +40,11 @@ img {
     margin-bottom: 10px;
     padding-left: 10px;
     border-radius: 10px;
-    font-family:Arial, Helvetica, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
 }
 #facts {
-    font-family: Arial, Helvetica, sans-serif;
+    font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
     padding: 15px 15px;
     font-size: large;
@@ -53,7 +54,9 @@ img {
 
 #picture {
     padding: 10px 10px;
-    background-color: var(--thrColor);
+    margin: auto;
+    height: auto;
+    background-color: var(--secColor);
     border: solid var(--borderColor) 10px;
     border-radius: 10px;
 }
@@ -64,17 +67,21 @@ img {
 }
 
 /*Styling for search bar*/
-#searchBar {
+#dogs {
     color:var(--textColor);
-    font-family: Arial, Helvetica, sans-serif;
-    font-size: medium;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+    margin-bottom: 10px;
+    margin-top: 5px;
     padding: 10px;
     border:none;
     border-radius: 10px;
+    align-items: flex-end;
 }
 
 /*Styling for buttons*/
 .submit {
+    font-family:'Courier New', Courier, monospace;
     background-color: #3C1642;
     border: none;
     border-radius: 10px;
@@ -99,6 +106,7 @@ img {
   }
 
   .History {
+    font-family:'Courier New', Courier, monospace;
     background-color: #3C1642;
     border: none;
     border-radius: 10px;

@@ -41,6 +41,9 @@ function getApiInfo(response) {
   <h2>${selectBreed}<h2>
   <img src="${image}"/>`);
 
+
+  $("#picture").html(`<img src="${image}"/>`);
+
   $("#facts").html(
 
     `<h2>Dog Facts:<h2> 
@@ -87,6 +90,7 @@ submitButton.click(async function (e) {
     .then((response) => getApiInfo(response))
     .catch((err) => console.error(err));
 });
+
 
 
 select.change(function () {
