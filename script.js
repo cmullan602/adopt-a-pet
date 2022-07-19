@@ -89,12 +89,12 @@ submitButton.click(async function (e) {
 
 function renderSearches() {
   // for(let i = 0 ; i<searchHistoryArr.length)
-  // $(searchHistoryEL).empty();
-  // $(searchHistoryArr).each(function (i, selectBreed) {
-  //   $(searchHistoryEL).append(`
-  //       <button class="button btn-history is-fullwidth mt-2" data-search="${selectBreed}">${selectBreed}</button>
-  //       `)
-  // });
+  $(searchHistoryEL).empty();
+  $(searchHistoryArr).each(function (selectBreed) {
+    $(searchHistoryEL).append(`
+        <button class="button btn-history is-fullwidth mt-2" data-search="${selectBreed}">${selectBreed}</button>
+        `);
+  });
 }
 
 select.change(function () {
