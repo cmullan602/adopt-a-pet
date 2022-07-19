@@ -28,6 +28,9 @@ function getApiInfo(response) {
   const { image, description } = result;
 
   console.log(image, description);
+
+  $("#picture").append(`<img src="${image}"/>`);
+  $("#facts").append(`<p> ${description}</p>`);
 }
 
 fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
