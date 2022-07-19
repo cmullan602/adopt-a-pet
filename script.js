@@ -41,7 +41,9 @@ function getApiInfo(response) {
   console.log(image, description);
 
   $("#picture").html(`<img src="${image}"/>`);
-  $("#facts").html(`<p> ${description}</p>`);
+  $("#facts").html(
+    `<h2> Dog Facts<h2> 
+    <p> ${description}</p>`);
 }
 
 //add search to history
@@ -83,9 +85,9 @@ fetch(dogUrl, {
   })
   .then(function (data) {
     $('.img-container').append(
-      `<img src='${data.message[0]}'>
-      <img src='${data.message[1]}'>
-      <img src='${data.message[2]}'>`
+      `<img id="column" src='${data.message[0]}'>
+      <img id="column" src='${data.message[1]}'>
+      <img id="column" src='${data.message[2]}'>`
     )
   });
 
