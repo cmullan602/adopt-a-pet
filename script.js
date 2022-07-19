@@ -1,12 +1,17 @@
 var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
 var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
 
+
 var searchForm = $("search-form");
 var submitButton = $("#submit-btn");
 var select = $("#dogs");
 var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
 
 var resultsEl = $("#picture");
+
+var dogUrl = 'https://shibe.online/api/shibes?count=1&urls=true&httpsUrls=true'
+
+
 
 // api
 var options = {
@@ -60,8 +65,25 @@ function getApiInfo(response) {
 
 // searchForm.addEventListener("submit", handleSearchSubmit);
 //Fetch images from shiba API
+fetch(dogUrl, {
+  method: 'GET',
+  credentials: 'same-origin', 
+  redirect: 'follow', 
+})
+  .then(function (response) {
+    return response.json();
+  })
+  .then(function (data) {
+    $('.img-container').append(
+      `<img src='${data.message[0]}'>
+      <img src='${data.message[1]}'>
+      <img src='${data.message[2]}'>`
+    )
+  });
+
 
 //Display shiba/bird images
+
 
 //Save searches/favorites
 
