@@ -13,6 +13,7 @@ var selectBreed = "";
 var searchHistoryArr = [];
 var clearEl = $(".clear");
 
+
 // api
 var options = {
   method: "GET",
@@ -22,39 +23,8 @@ var options = {
   },
 };
 
-//generate list of dog names in the search bar
-function getApiInfo(response) {
-  for (var i = 0; i < response.length; i++) {
-    var dogName = response[i].name;
-    var dogOption = $(`<option value="${dogName}">${dogName}</option>`);
 
-    select.append(dogOption);
-  }
-  if (selectBreed === "") return;
-  //render the image and the description
-  const [result] = response.filter((breed) => breed.name === selectBreed);
-  const { image, description } = result;
-
-  setHistory(selectBreed)
-
-  $("#picture").html(`
-  <h2>${selectBreed}<h2>
-  <img src="${image}"/>`);
-
-
-  $("#picture").html(`<img src="${image}"/>`);
-
-  $("#facts").html(
-
-    `<h2>Dog Facts:<h2> 
-    <p>${description}</p>`
-  );
-  
-}
-
-
-
-//Fetch images from shiba API
+//Fetch images from Dog API
 fetch(dogUrl, {
   method: "GET",
   credentials: "same-origin",
@@ -73,6 +43,77 @@ fetch(dogUrl, {
     );
   });
 
+
+//generate list of dog names in the search bar
+function getApiInfo(response) {
+  for (var i = 0; i < response.length; i++) {
+    var dogName = response[i].name;
+    var dogOption = $(`<option value="${dogName}">${dogName}</option>`);
+
+    select.append(dogOption);
+  }
+  if (selectBreed === "") return;
+}
+
+//render the image and the description from dropdown menu
+
+function renderResponse(response){
+
+  const [result] = response.filter((breed) => breed.name === selectBreed);
+  const { image, description } = result;
+
+  $("#picture").html(`
+  <h2>${selectBreed}<h2>
+  <img src="${image}"/>`);
+
+
+  $("#picture").html(`<img src="${image}"/>`);
+
+  $("#facts").html(
+
+    `<h2>Dog Facts:<h2> 
+    <p>${description}</p>`
+  );
+  
+
+}
+
+
+function renderDescripFromSearch(name){
+
+  var apiUrl = `https://dogdummyapi.p.rapidapi.com/dog/name/${name}`
+  
+  fetch(apiUrl, options)
+      .then(function(response){
+          response.json().then(function (data){
+              console.log(data)
+              renderDescripFromSearch2(data)
+          })
+      })
+      
+}
+
+
+function renderDescripFromSearch2(dog){
+  var descrio= dog.description;
+  var imagio = dog.image;
+  console.log(descrio)
+  console.log(imagio)
+
+  $("#picture").html(`
+      <h2>${selectBreed}<h2>
+      <img src="${imagio}"/>`);
+    
+      $("#facts").html(
+    
+        `<h2>Dog Facts:<h2> 
+        <p>${descrio}</p>`
+      );
+
+}
+
+
+
 //fetch dogdummy api
 fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
   .then((response) => response.json())
@@ -82,12 +123,12 @@ fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
 //submit click event
 submitButton.click(async function (e) {
   e.preventDefault();
-
+  
   setHistory(selectBreed);
 
   fetch("https://dogdummyapi.p.rapidapi.com/dogs/", options)
     .then((response) => response.json())
-    .then((response) => getApiInfo(response))
+    .then((response) => renderResponse(response))
     .catch((err) => console.error(err));
 });
 
@@ -98,19 +139,19 @@ select.change(function () {
 });
 
 
-
+//render buttons 
 function renderSearches() {
   $(searchHistoryEL).empty();
   $(searchHistoryArr).each(function (i, searchHistory) {
     $(searchHistoryEL).append(`
-        <button class="button btn-history is-fullwidth mt-2" data-search="${searchHistory}">${searchHistory}</button>
+        <button class="button btn-history is-full-width mt-2" data-search="${searchHistory}">${searchHistory}</button>
         `)
 
-        $('.btn-history').on('click', function() {
-          var string = $(this).attr('data-search')
-          getApiInfo(string)
-        });
-      
+         $('.button').on('click', function() {
+            var string = $(this).attr('data-search')
+            console.log(string)
+            renderDescripFromSearch(string)
+          });
   });
 
 }
@@ -121,7 +162,7 @@ function initSearchHistory(){
   if(storedHistory){
      searchHistoryArr = JSON.parse(storedHistory);
   }
-  renderSearches()
+ 
 }
 
 initSearchHistory();
@@ -135,12 +176,7 @@ function setHistory(search) {
   renderSearches();
 }
 
-
 renderSearches();
 
-clearEl.on("click", function () {
-  localStorage.clear(searchHistoryArr);
-  $(searchHistoryEL).empty();
-  searchHistory = [];
-  renderSearches();
-})
+
+
