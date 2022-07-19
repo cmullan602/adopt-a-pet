@@ -11,6 +11,7 @@ let searchHistory = JSON.parse(localStorage.getItem("search"));
 
 var selectBreed = "";
 var searchHistoryArr = [];
+var clearEl = $(".clear");
 
 // api
 var options = {
@@ -34,6 +35,8 @@ function getApiInfo(response) {
   const [result] = response.filter((breed) => breed.name === selectBreed);
   const { image, description } = result;
 
+  setHistory(selectBreed)
+
   $("#picture").html(`
   <h2>${selectBreed}<h2>
   <img src="${image}"/>`);
@@ -49,13 +52,7 @@ function getApiInfo(response) {
   
 }
 
-function setHistory(response) {
-  if (searchHistoryArr.indexOf(response) !== -1) {
-    return;
-  }
-  searchHistoryArr.push(response);
-  localStorage.setItem("search-history", JSON.stringify(searchHistoryArr));
-}
+
 
 //Fetch images from shiba API
 fetch(dogUrl, {
@@ -95,21 +92,55 @@ submitButton.click(async function (e) {
 });
 
 
-// function renderSearches() {
-//     for(let i = 0 ; i<searchHistoryArr.length)
-//     // $(searchHistoryEL).empty();
-//     // $(searchHistoryArr).each(function (i, selectBreed) {
-//     //   $(searchHistoryEL).append(`
-//     //       <button class="button btn-history is-fullwidth mt-2" data-search="${selectBreed}">${selectBreed}</button>
-//     //       `)
-     
-//     // });
-  
-//   }
-
 
 select.change(function () {
   selectBreed = select.val();
 });
 
+
+
+function renderSearches() {
+  $(searchHistoryEL).empty();
+  $(searchHistoryArr).each(function (i, searchHistory) {
+    $(searchHistoryEL).append(`
+        <button class="button btn-history is-fullwidth mt-2" data-search="${searchHistory}">${searchHistory}</button>
+        `)
+
+        $('.btn-history').on('click', function() {
+          var string = $(this).attr('data-search')
+          getApiInfo(string)
+        });
+      
+  });
+
+}
+
+
+function initSearchHistory(){
+  var storedHistory = localStorage.getItem('search-history');
+  if(storedHistory){
+     searchHistoryArr = JSON.parse(storedHistory);
+  }
+  renderSearches()
+}
+
+initSearchHistory();
+
+function setHistory(search) {
+  if (searchHistoryArr.indexOf(search) !== -1) {
+    return;
+  }
+  searchHistoryArr.push(search);
+  localStorage.setItem('search-history', JSON.stringify(searchHistoryArr));
+  renderSearches();
+}
+
+
 renderSearches();
+
+clearEl.on("click", function () {
+  localStorage.clear(searchHistoryArr);
+  $(searchHistoryEL).empty();
+  searchHistory = [];
+  renderSearches();
+})
