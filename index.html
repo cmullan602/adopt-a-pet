@@ -16,28 +16,36 @@
     <header style="text-align: center; font-size: xx-large">
       <strong>DO YOU LOVE DOGS AS MUCH AS US?</strong>
     </header>
-    
 
-    <div
-      class="sidebar bar-block"
-      style="background-color: lightblue; width: 25%"
-    >
-      <!-- <label for="cars">Choose a dog:</label> -->
+    <form id="search-form" class="form">
+      <div
+        class="sidebar bar-block"
+        style="background-color: lightblue; width: 25%"
+      >
+        <!-- <label for="cars">Choose a dog:</label> -->
 
-      <select class="select" name="Dogs" id="dogs">
-        <option value="" disabled selected>Choose a Dog!</option>
-        <!-- append dog options here -->
-        <!-- <option value=""></option> -->
-      </select>
-      <button class="submit" style="display: block">Submit</button>
-    </div>
+        <select class="select" id="dogs" name="Dogs">
+          <option value="" disabled selected>Choose a Dog!</option>
+          <!-- append dog options here -->
+          <!-- <option value=""></option> -->
+        </select>
+        <button class="submit" id="submit-btn" style="display: block">
+          Submit
+        </button>
+      </div>
+    </form>
     <div>
-      <button class="History" style="display: block;" onclick="location.href='./searchSave.html'">Search History</button>
-      <img src="api images go here " alt="" />
+      <button
+        class="History"
+        style="display: block"
+        onclick="location.href='./searchSave.html'"
+      >
+        Search History
+      </button>
+      <div class="img-container"></div>
     </div>
     <div id="picture" style="text-align: center">Pictures</div>
     <div id="facts" style="text-align: center">These are the facts</div>
-    
   </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="./script.js"></script>
