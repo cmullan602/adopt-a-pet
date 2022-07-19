@@ -7,16 +7,14 @@ var submitButton = $("#submit-btn");
 var select = $("#dogs");
 var dropdownMenu = "https://dogdummyapi.p.rapidapi.com/dogs/";
 
-
-
-const historyEl = $("#historyDisplay")
-let searchHistory = JSON.parse(localStorage.getItem("search"))
+const historyEl = $("#historyDisplay");
+let searchHistory = JSON.parse(localStorage.getItem("search"));
 
 var selectBreed = "";
 
 
-var dogUrl = 'https://dog.ceo/api/breeds/image/random/3'
 
+var dogUrl = 'https://dog.ceo/api/breeds/image/random/3'
 
 
 // api
@@ -46,18 +44,19 @@ function getApiInfo(response) {
   $("#facts").html(`<p> ${description}</p>`);
 }
 
-
 //add search to history
 // submitButton.addEventListener("click", function () {
-//     const searchTerm = select.value;
-//     searchHistory.push(searchTerm);
-//     localStorage.setItem("search", JSON.stringify(searchHistory));
-//     renderSearchHistory();
-// })
 
-// function renderSearchHistory() { 
+//   const searchTerm = select.value;
+//   searchHistory.push(searchTerm);
+//   localStorage.setItem("search", JSON.stringify(searchHistory));
+//   renderSearchHistory();
+// });
+
+// function renderSearchHistory() {
 //     historyEl.innerHTML = "";
-//     for (let i = 0; i< searchHistory.length; i++) {
+//     for (let i = 0; < searchHistory.length; i++) {
+
 //         const historyItem = document.createElement("input");
 //         historyItem.setAttribute("type", "text");
 //         historyItem.setAttribute("class", "")
@@ -71,6 +70,7 @@ function getApiInfo(response) {
 
 
 // searchForm.addEventListener("submit", handleSearchSubmit);
+
 
 //Fetch images from shiba API
 fetch(dogUrl, {
@@ -88,8 +88,6 @@ fetch(dogUrl, {
       <img src='${data.message[2]}'>`
     )
   });
-
-
 
 
 
@@ -111,5 +109,4 @@ submitButton.click(async function (e) {
 select.change(function () {
   selectBreed = select.val();
 });
-
 
