@@ -31,6 +31,8 @@ const dogFacts = [
   let index = Math.floor(Math.random() * dogFacts.length)
   dogFacts[index]
 
+  $(".facts").append(`
+  <p>Random Dog Fact:<p> ${dogFacts[index]}`)
 
 // api
 var options = {
