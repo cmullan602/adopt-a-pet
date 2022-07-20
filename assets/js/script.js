@@ -1,6 +1,6 @@
 var dogdummyApiKey = `9f30d9f26amsh0792997f4f9723dp171d82jsn8d8b6b792556`;
 var dogdummyApiRootUrl = "https://dogdummyapi.p.rapidapi.com";
-var dogUrl = "https://dog.ceo/api/breeds/image/random/5";
+var dogUrl = "https://dog.ceo/api/breeds/image/random/6";
 
 var dogAsAServiceApi = "ae97bf11-f094-404e-bf4f-08550f9ba818";
 
@@ -56,11 +56,12 @@ function dogCeoRender(url) {
     })
     .then(function (data) {
       $(".img-container").append(
-        `<img id="column" src='${data.message[0]}'>
-      <img id="column" src='${data.message[1]}'>
-      <img id="column" src='${data.message[2]}'>
-      <img id="column" src='${data.message[3]}'>
-      <img id="column" src='${data.message[4]}'>`
+        `<img class="random" id="column" src='${data.message[0]}'>
+      <img class="random" id="column" src='${data.message[1]}'>
+      <img class="random" id="column" src='${data.message[2]}'>
+      <img class="random" id="column" src='${data.message[3]}'>
+      <img class="random" id="column" src='${data.message[4]}'>
+      <img class="random" id="column" src='${data.message[5]}'>`
       );
     });
 }
@@ -81,7 +82,7 @@ function renderResponse(response) {
   const [result] = response.filter((breed) => breed.name === selectBreed);
   const { image, description } = result;
 
-  $("#picture").html(`<img src="${image}"/>`);
+  $("#picture").html(`<img class="fact-image" src="${image}"/>`);
 
   $("#facts").html(
     `<h2>Dog Facts:<h2> 
@@ -97,7 +98,7 @@ function renderDescripFromSearch(dog) {
   console.log(imagio);
 
   $("#picture").html(`
-      <img src="${imagio}"/>`);
+      <img class="fact-image" src="${imagio}"/>`);
 
   $("#facts").html(
     `<h2>Dog Facts:<h2> 
