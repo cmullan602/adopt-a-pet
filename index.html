@@ -17,46 +17,50 @@
       <strong>DO YOU LOVE DOGS AS MUCH AS US?</strong>
     </header>
 
-    <div class="columns is-variable is-8 m-1">
+
+    <!--Container for Searchbar and submit-->
+    <div class="columns is-variable is-8">
+
       <div
             class="sidebar bar-block column is-3 m-1"
             style="background-color: lightblue">
         <form id="search-form" class="form">
-          <!-- <label for="cars">Choose a dog:</label> -->
-
-
+          <!-- Searchbar -->
             <select class="select" id="dogs" name="Dogs">
               <option value="" disabled selected>Choose a Dog!</option>
-          <!-- append dog options here -->
-          <!-- <option value=""></option> -->
             </select>
+            <!--Submit button-->
             <button class="submit" id="submit-btn" style="display: block">
             Submit
             </button>
         </form>
         </div>
-        <div class="facts column is-5 m-1" style="background-color: lightblue"> </div>
-        <div class="doge column is-4 m-1 pl-3" style="background-color: lightblue"> </div>
-    </div>
-    <div>
-       <div
-        class="History"
-        style="display: block"
-        >
-        
-     
-      <form id="historyDisplay">
-        <button class="clear">clear history</button>
-      </form>
-     
+
+        <!-- container for dog fact-->
+        <div class="facts column is-5" style="background-color: lightblue"> </div>
+        <!--container for dogecoin-->
+        <div class="doge column is-4" style="background-color: lightblue"> </div>
+
     </div>
 
+    <div>
+      <!--container for local history-->
+       <div
+        class="History"
+        style="display: block">
+        <!--Display search history-->
+        <form id="historyDisplay">
+        </form>
+      </div>
+       
+      <!--container for 2nd api- random dog image generator-->
     <div class="img-container columns"></div>
     <div style="text-align: center">
       <div id="picture"></div>
     <div style="text-align: center">
       <div id="facts"></div>
     </div>
+
   </body>
   <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
   <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.24.0/moment.min.js"></script>
