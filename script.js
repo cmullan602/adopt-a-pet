@@ -205,3 +205,4 @@ function renderDoge(doge) {
   <p>$ ${dogePrice}<p>
   </div>`);
 }
+
