@@ -30,8 +30,8 @@ const dogFacts = [
 let index = Math.floor(Math.random() * dogFacts.length);
 dogFacts[index];
 
-$(".facts").append(`
-  <p>Random Dog Fact:<p> ${dogFacts[index]}`);
+$(".facts").append(`<h2>Random Dog Fact:<h2>
+<p>${dogFacts[index]}</p>`);
 
 // api
 var options = {
@@ -200,7 +200,7 @@ function renderDoge(doge) {
   $(".doge").append(`
   <img src="Dogecoin_logo.0.jpeg"/>
   <div class="column">
-  <p>Doge Coin Price: </p>
+  <h2>Doge Coin Price: </h2>
   <p>${moment.unix(dogeTime).format("MM/DD/YYYY")}<p>
   <p>$ ${dogePrice}<p>
   </div>`);
