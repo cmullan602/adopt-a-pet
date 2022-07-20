@@ -160,3 +160,22 @@ img {
     box-shadow: 0 5px #666;
     transform: translateY(2px);
   }
+
+  .doge {
+    display:flex;
+    width: 90px;
+    font-family:'Courier New', Courier, monospace;
+    color:var(--textColor);
+    font-weight: bold;
+  }
+
+
+  .doge img {
+  width: 70px;
+  height: 70px;
+  margin:10px auto 10px auto;
+  padding: 5 px;
+  opacity: 85%;
+  object-fit: cover;
+  border: var(--borderColor) solid 4px;
+  } 
