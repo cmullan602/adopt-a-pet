@@ -43,6 +43,7 @@ img {
     font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
 }
+
 #facts {
     font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
@@ -62,6 +63,8 @@ img {
 }
 
 .sidebar {
+    justify-content: center;
+    align-items: center;
     padding: 15px;
     border-radius: 10px;
 }
@@ -163,10 +166,15 @@ img {
 
   .doge {
     display:flex;
-    width: 90px;
+    align-items: center;
+    margin-bottom: 10px;
+    padding-left: 10px;
+    border-radius: 10px;
     font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
-    font-weight: bold;
+    padding: 10px;
+    margin: 10px;
+    
   }
 
 
@@ -179,3 +187,11 @@ img {
   object-fit: cover;
   border: var(--borderColor) solid 4px;
   } 
+
+  .facts{
+    padding: 40px;
+    margin-bottom: 10px;
+    border-radius: 10px;
+    font-family:'Courier New', Courier, monospace;
+    color:var(--textColor);
+  }
