@@ -95,8 +95,8 @@ img {
     display: inline-block;
     font-size: 15px;
     transition-duration: 0.4s;
-    margin-bottom: 10px;
     box-shadow: 0 5px #999;
+    font-weight: bold;
   }
 
   .submit:hover {
@@ -176,6 +176,9 @@ img {
     margin: 10px;
     
   }
+  .doge p {
+    font-weight: bold;
+  }
 
 
   .doge img {
@@ -186,12 +189,27 @@ img {
   opacity: 85%;
   object-fit: cover;
   border: var(--borderColor) solid 4px;
+  font-weight: bold;
   } 
 
   .facts{
+    align-items: center;
     padding: 40px;
     margin-bottom: 10px;
     border-radius: 10px;
     font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
   }
+
+  h2{
+    font-size: large;
+    font-weight: bold;
+  }
+
+  button {
+    padding: 2px;
+    margin: 2px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+
