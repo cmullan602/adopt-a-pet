@@ -27,6 +27,7 @@ const dogFacts = [
   "Dogs are about as intelligent as a two-year-old",
 ];
 
+// generate dog facts
 let index = Math.floor(Math.random() * dogFacts.length);
 dogFacts[index];
 
@@ -41,8 +42,8 @@ var options = {
     "X-RapidAPI-Host": "dogdummyapi.p.rapidapi.com",
   },
 };
-
 dogCeoRender(dogUrl);
+
 //Fetch images from Dog API
 function dogCeoRender(url) {
   fetch(url, {
@@ -76,14 +77,9 @@ function getApiInfo(response) {
 }
 
 //render the image and the description from dropdown menu
-
 function renderResponse(response) {
   const [result] = response.filter((breed) => breed.name === selectBreed);
   const { image, description } = result;
-
-  $("#picture").html(`
-  <h2>${selectBreed}<h2>
-  <img src="${image}"/>`);
 
   $("#picture").html(`<img src="${image}"/>`);
 
@@ -93,6 +89,7 @@ function renderResponse(response) {
   );
 }
 
+//render the image and the description from search history
 function renderDescripFromSearch(dog) {
   var descrio = dog.description;
   var imagio = dog.image;
@@ -100,7 +97,6 @@ function renderDescripFromSearch(dog) {
   console.log(imagio);
 
   $("#picture").html(`
-      <h2>${selectBreed}<h2>
       <img src="${imagio}"/>`);
 
   $("#facts").html(
@@ -205,4 +201,3 @@ function renderDoge(doge) {
   <p>$ ${dogePrice}<p>
   </div>`);
 }
-
