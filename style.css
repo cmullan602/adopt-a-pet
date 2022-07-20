@@ -1,35 +1,34 @@
 /*Defining variables*/
 :root {
-    --borderColor: #D3B99F;
-    --textColor: #210203;
-    --bgColor: #9AADBF;
-    --secColor: #6D98BA;
-    --thrColor: #C17767;		
-    --frColor: #210203;
+  --borderColor: #d3b99f;
+  --textColor: #210203;
+  --bgColor: #9aadbf;
+  --secColor: #6d98ba;
+  --thrColor: #c17767;
+  --frColor: #210203;
 }
 
 html {
-    background-image: url("https://www.nicepng.com/png/full/10-103613_cat-paw-prints-paw-prints-transparent-background.png");
-    background-color: var(--bgColor);
-    background-repeat:repeat-x repeat-y;
-    background-size:contain;
-
+  background-image: url("https://www.nicepng.com/png/full/10-103613_cat-paw-prints-paw-prints-transparent-background.png");
+  background-color: var(--bgColor);
+  background-repeat: repeat-x repeat-y;
+  background-size: contain;
 }
 
 header {
-    background-color: var(--secColor);
-    background-size:auto;
-    border: solid 10px var(--borderColor);
-    color: var(--textColor);
-    border-radius: 10px;
-    font-family:'Courier New', Courier, monospace;
-    padding: 25px 25px;
+  background-color: var(--secColor);
+  background-size: auto;
+  border: solid 10px var(--borderColor);
+  color: var(--textColor);
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  padding: 25px 25px;
 }
 
 img {
   width: 300px;
   height: 300px;
-  margin:10px auto 10px auto;
+  margin: 10px auto 10px auto;
   padding: 5 px;
   opacity: 85%;
   object-fit: cover;
@@ -37,179 +36,176 @@ img {
 }
 
 .what-doggy {
-    margin-bottom: 10px;
-    padding-left: 10px;
-    border-radius: 10px;
-    font-family:'Courier New', Courier, monospace;
-    color:var(--textColor);
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--textColor);
 }
 
 #facts {
-    font-family:'Courier New', Courier, monospace;
-    color:var(--textColor);
-    padding: 15px 15px;
-    font-size: large;
-    background-color: var(--borderColor);
-    border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--textColor);
+  padding: 15px 15px;
+  font-size: large;
+  background-color: var(--borderColor);
+  border-radius: 10px;
 }
 
 #picture {
-    padding: 10px 10px;
-    margin: auto;
-    height: auto;
-    background-color: var(--secColor);
-    border: solid var(--borderColor) 10px;
-    border-radius: 10px;
+  padding: 10px 10px;
+  margin: auto;
+  height: auto;
+  background-color: var(--secColor);
+  border: solid var(--borderColor) 10px;
+  border-radius: 10px;
 }
 
 .sidebar {
-    justify-content: center;
-    align-items: center;
-    padding: 15px;
-    border-radius: 10px;
+  justify-content: center;
+  align-items: center;
+  padding: 15px;
+  border-radius: 10px;
 }
 
 /*Styling for search bar*/
 #dogs {
-    color:var(--textColor);
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-    margin-bottom: 10px;
-    margin-top: 5px;
-    padding: 10px;
-    border:none;
-    border-radius: 10px;
-    align-items: flex-end;
+  color: var(--textColor);
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 5px;
+  padding: 10px;
+  border: none;
+  border-radius: 10px;
+  align-items: flex-end;
 }
 
 /*Styling for buttons*/
 .submit {
-    font-family:'Courier New', Courier, monospace;
-    background-color: #3C1642;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 35.5px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    transition-duration: 0.4s;
-    box-shadow: 0 5px #999;
-    font-weight: bold;
-  }
+  font-family: "Courier New", Courier, monospace;
+  background-color: #3c1642;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 35.5px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  box-shadow: 0 5px #999;
+  font-weight: bold;
+}
 
-  .submit:hover {
-    background-color: #C17767; 
-  }
-  .submit:active {
-    background-color: #C17767;
-    box-shadow: 0 3px #666;
-    transform: translateY(2px);
-  }
+.submit:hover {
+  background-color: #c17767;
+}
+.submit:active {
+  background-color: #c17767;
+  box-shadow: 0 3px #666;
+  transform: translateY(2px);
+}
 
-  .History {
-    font-family:'Courier New', Courier, monospace;
-    background-color: #3C1642;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    transition-duration: 0.4s;
-    margin-bottom: 10px;
-    box-shadow: 0 5px #999;
-    margin: 10px;
-  }
+.History {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #3c1642;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  margin-bottom: 10px;
+  box-shadow: 0 5px #999;
+  margin: 10px;
+}
 
-  .History:hover {
-    background-color: #C17767; 
-    color: white;
-  }
+.History:hover {
+  background-color: #c17767;
+  color: white;
+}
 
-  .History:active {
-    background-color: #C17767;
-    box-shadow: 0 5px #666;
-    transform: translateY(2px);
-  }
+.History:active {
+  background-color: #c17767;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
 
-  .clear {
-    font-family:'Courier New', Courier, monospace;
-    background-color: #3C1642;
-    border: none;
-    border-radius: 10px;
-    color: white;
-    padding: 10px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 15px;
-    transition-duration: 0.4s;
-    margin-bottom: 10px;
-    box-shadow: 0 5px #999;
-    margin: 10px;
-  }
+.clear {
+  font-family: "Courier New", Courier, monospace;
+  background-color: #3c1642;
+  border: none;
+  border-radius: 10px;
+  color: white;
+  padding: 10px 10px;
+  text-align: center;
+  text-decoration: none;
+  display: inline-block;
+  font-size: 15px;
+  transition-duration: 0.4s;
+  margin-bottom: 10px;
+  box-shadow: 0 5px #999;
+  margin: 10px;
+}
 
-  .clear:hover {
-    background-color: #C17767; 
-    color: white;
-  }
+.clear:hover {
+  background-color: #c17767;
+  color: white;
+}
 
-  .clear:active {
-    background-color: #C17767;
-    box-shadow: 0 5px #666;
-    transform: translateY(2px);
-  }
+.clear:active {
+  background-color: #c17767;
+  box-shadow: 0 5px #666;
+  transform: translateY(2px);
+}
 
-  .doge {
-    display:flex;
-    align-items: center;
-    margin-bottom: 10px;
-    padding-left: 10px;
-    border-radius: 10px;
-    font-family:'Courier New', Courier, monospace;
-    color:var(--textColor);
-    padding: 10px;
-    margin: 10px;
-    
-  }
-  .doge p {
-    font-weight: bold;
-  }
+.doge {
+  display: flex;
+  align-items: center;
+  margin-bottom: 10px;
+  padding-left: 10px;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--textColor);
+  padding: 10px;
+  margin: 10px;
+}
+.doge p {
+  font-weight: bold;
+}
 
-
-  .doge img {
+.doge img {
   width: 70px;
   height: 70px;
-  margin:10px auto 10px auto;
+  margin: 10px auto 10px auto;
   padding: 5 px;
   opacity: 85%;
   object-fit: cover;
   border: var(--borderColor) solid 4px;
   font-weight: bold;
-  } 
+}
 
-  .facts{
-    align-items: center;
-    padding: 40px;
-    margin-bottom: 10px;
-    border-radius: 10px;
-    font-family:'Courier New', Courier, monospace;
-    color:var(--textColor);
-  }
+.facts {
+  align-items: center;
+  padding: 40px;
+  margin-bottom: 10px;
+  border-radius: 10px;
+  font-family: "Courier New", Courier, monospace;
+  color: var(--textColor);
+}
 
-  h2{
-    font-size: large;
-    font-weight: bold;
-  }
+h2 {
+  font-size: large;
+  font-weight: bold;
+}
 
-  button {
-    padding: 2px;
-    margin: 2px;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
-  }
-
+button {
+  padding: 2px;
+  margin: 2px;
+  font-family: "Courier New", Courier, monospace;
+  font-weight: bold;
+}
