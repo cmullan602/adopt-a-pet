@@ -226,5 +226,4 @@ function renderDoge(doge)  {
   <p>${moment.unix(dogeTime).format("MM/DD/YYYY")}<p>
   <p>$ ${dogePrice}<p>
   </div>`)
- 
 }
