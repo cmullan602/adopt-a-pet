@@ -13,6 +13,8 @@ https://cmullan602.github.io/dog-fact-finder/
 
 This website can be used to up your knowledge of dogs, as well as provide pictures of the dog you have searched.
 
+![Website Preview](/assets/Screenshot2022-07-18205352.png?raw=true)
+
 ## Credits
 
 This website was built and designed by the following people:
