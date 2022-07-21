@@ -195,7 +195,7 @@ function renderDoge(doge) {
   var dogeTime = doge.time;
 
   $(".doge").append(`
-  <img src="/assets/images/Dogecoin_logo.0.jpeg"/>
+  <img src="assets/images/Dogecoin_logo.0.jpeg"/>
   <div class="column">
   <h2>Doge Coin Price: </h2>
   <p>${moment.unix(dogeTime).format("MM/DD/YYYY")}<p>
