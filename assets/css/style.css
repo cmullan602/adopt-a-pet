@@ -65,8 +65,8 @@ header {
 }
 
 .sidebar {
-  text-align: center;
-  justify-content: center;
+    padding-top: 30px;
+    align-items: center;
     border-radius: 10px;
 }
 
@@ -169,9 +169,9 @@ header {
   .doge {
     display:flex;
     align-items:center;
-    justify-content: flex-end;
     margin-bottom: 10px;
     border-radius: 10px;
+    padding-left: 100px;
     font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
   }
@@ -221,6 +221,8 @@ header {
   min-width: 300px;
 }
 
+
+
 @media screen and (max-width: 768px) {
   .img-container{
       display: flex;
@@ -232,4 +234,11 @@ header {
     height: 300px;
 
   }
+
+  .sidebar {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 10px;
+}
 }
