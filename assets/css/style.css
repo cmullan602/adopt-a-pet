@@ -16,10 +16,6 @@ html {
 
 }
 
-body {
-  width: 100vw;
-  height: 100vh;
-}
 
 header {
     background-color: var(--secColor);
@@ -31,14 +27,15 @@ header {
     padding: 25px 25px;
 }
 
-img {
-  width: 300px;
-  height: 300px;
+.random {
+  width:250px;
+  height: 250px;
   margin:10px auto 10px auto;
   padding: 5 px;
   opacity: 85%;
   object-fit: cover;
   border: var(--borderColor) solid 4px;
+  border-radius: 10px;
 }
 
 .what-doggy {
@@ -68,7 +65,7 @@ img {
 }
 
 .sidebar {
-    justify-content: center;
+    padding-top: 30px;
     align-items: center;
     border-radius: 10px;
 }
@@ -94,9 +91,7 @@ img {
     border-radius: 10px;
     color: white;
     padding: 10px 35.5px;
-    text-align: center;
     text-decoration: none;
-    display: inline-block;
     font-size: 15px;
     transition-duration: 0.4s;
     box-shadow: 0 5px #999;
@@ -105,11 +100,24 @@ img {
 
   .submit:hover {
     background-color: #C17767; 
+    cursor:pointer;
   }
   .submit:active {
     background-color: #C17767;
     box-shadow: 0 3px #666;
     transform: translateY(2px);
+  }
+
+  #historyDisplay button {
+    padding: 2px;
+    margin: 2px;
+    font-family:'Courier New', Courier, monospace;
+    font-weight: bold;
+  }
+  #historyDisplay button:hover{
+    background-color: #C17767; 
+    color: white;
+    cursor:pointer;
   }
 
   .History {
@@ -129,16 +137,6 @@ img {
     margin: 10px;
   }
 
-  .History:hover {
-    background-color: #C17767; 
-    color: white;
-  }
-
-  .History:active {
-    background-color: #C17767;
-    box-shadow: 0 5px #666;
-    transform: translateY(2px);
-  }
 
   .clear {
     font-family:'Courier New', Courier, monospace;
@@ -170,16 +168,14 @@ img {
 
   .doge {
     display:flex;
-    align-items: center;
+    align-items:center;
     margin-bottom: 10px;
-    padding-left: 10px;
     border-radius: 10px;
+    padding-left: 100px;
     font-family:'Courier New', Courier, monospace;
     color:var(--textColor);
-    padding: 10px;
-    margin: 10px;
-    
   }
+
   .doge p {
     font-weight: bold;
   }
@@ -190,14 +186,15 @@ img {
   height: 70px;
   margin:10px auto 10px auto;
   padding: 5 px;
-  opacity: 85%;
+  opacity: 90%;
   object-fit: cover;
   border: var(--borderColor) solid 4px;
   font-weight: bold;
+  border-radius: 10px;
   } 
 
   .facts{
-    align-items: center;
+    text-align: center;
     padding: 40px;
     margin-bottom: 10px;
     border-radius: 10px;
@@ -210,10 +207,38 @@ img {
     font-weight: bold;
   }
 
-  button {
-    padding: 2px;
-    margin: 2px;
-    font-family:'Courier New', Courier, monospace;
-    font-weight: bold;
+  
+  
+.fact-image {
+    width: 500px;
+    height: 400px;
+    margin:10px auto 10px auto;
+    padding: 5 px;
+
   }
 
+.img-container {
+  min-width: 300px;
+}
+
+
+
+@media screen and (max-width: 768px) {
+  .img-container{
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: row;
+  }
+  .fact-image {
+    width: 500px;
+    height: 300px;
+
+  }
+
+  .sidebar {
+    display: flex;
+    padding: 10px;
+    justify-content: center;
+    border-radius: 10px;
+}
+}
